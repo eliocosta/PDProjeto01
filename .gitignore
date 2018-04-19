@@ -7,7 +7,7 @@ gradlew
 gradlew.bat
 settings.gradle
 /local.properties
-/.idea/*
+.idea/*
 .DS_Store
 /build
 /captures
