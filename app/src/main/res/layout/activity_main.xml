@@ -4,7 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".MainActivity">
 
+    <!--<Button-->
+        <!--android:onClick="saveData"-->
+        <!--android:text="Teste"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <EditText
+        android:id="@+id/edtdisciplina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome da disciplina"/>
+
+    <EditText
+        android:id="@+id/txtfromdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data de início do semestre" />
+
+    <EditText
+        android:id="@+id/txttodate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data de fim do semestre" />
+
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Percentual de faltas possíveis"/>
+
+    <TextView
+        android:text="Dias da semana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Segunda-feira"
+            android:id="@+id/checkDays"/>
+
+        <LinearLayout
+            android:id="@+id/LabelSeek"
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/LabelSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/barAulas"
+            android:max="6"
+            android:progress="1"
+            android:layout_below="@+id/LabelSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
 
 </LinearLayout>
