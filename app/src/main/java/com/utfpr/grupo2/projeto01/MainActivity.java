@@ -6,6 +6,10 @@ import android.view.View;
 import org.json.JSONArray;
 import java.util.ArrayList;
 
+import android.widget.AdapterView;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
@@ -20,7 +24,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnClickListener {
+
+    private ListView listViewDays;
+    private CheckBox checkDays;
 
     //UI References
     private EditText fromDate;
@@ -33,34 +40,40 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     TextView tvProgressLabel;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listViewDays = (ListView)findViewById(R.id.listViewDays);
+        listViewDays.setAdapter(new SimplesAdapter(this));
+
+//        listViewDays.setOnItemClickListener((AdapterView.OnItemClickListener) this);
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 
         findViewsById();
         setDateTimeField();
 
-        // set a change listener on the SeekBar
-        SeekBar seekBar = findViewById(R.id.barAulas);
-        seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
 
-        int progress = seekBar.getProgress();
-        tvProgressLabel = findViewById(R.id.LabelSeekBar);
-//        tvProgressLabel.setText("Progress: " + progress);
+//        // set a change listener on the SeekBar
+//        SeekBar seekBar = findViewById(R.id.barAulas);
+//        seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
+//
+//        int progress = seekBar.getProgress();
+//        tvProgressLabel = findViewById(R.id.LabelSeekBar);
+
     }
 
     private void findViewsById() {
-        fromDate= (EditText) findViewById(R.id.txtfromdate);
+        fromDate = (EditText) findViewById(R.id.txtfromdate);
         fromDate.setInputType(InputType.TYPE_NULL);
-        //fromDate.requestFocus();
+//        fromDate.requestFocus();
 
         toDate = (EditText) findViewById(R.id.txttodate);
         toDate.setInputType(InputType.TYPE_NULL);
     }
+
 
     private void setDateTimeField() {
         fromDate.setOnClickListener(this);
@@ -88,15 +101,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
 
-    public void saveData(View v){
-
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("jose");
-        list.add("maria");
-        JSONArray jsArray = new JSONArray(list);
-
-        android.widget.Toast.makeText(this,jsArray.toString(),Toast.LENGTH_LONG).show();
-    }
+//
+//    public void saveData(View v){
+//
+//        ArrayList<String> list = new ArrayList<String>();
+//        list.add("jose");
+//        list.add("maria");
+//        JSONArray jsArray = new JSONArray(list);
+//
+//        android.widget.Toast.makeText(this,jsArray.toString(),Toast.LENGTH_LONG).show();
+//    }
 
     @Override
     public void onClick(View v) {
@@ -125,4 +139,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             // called after the user finishes moving the SeekBar
         }
     };
+
+    public void configDate(View v){
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.LabelSeek);
+
+        if(linearLayout.getVisibility() == View.VISIBLE){
+            linearLayout.setVisibility(View.GONE);
+        }
+        else{
+            linearLayout.setVisibility(View.VISIBLE);
+        }
+    }
 }

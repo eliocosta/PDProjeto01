@@ -45,37 +45,14 @@
         android:layout_marginVertical="10dp"/>
 
     <RelativeLayout
+        android:id="@+id/listDays"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Segunda-feira"
-            android:id="@+id/checkDays"/>
-
-        <LinearLayout
-            android:id="@+id/LabelSeek"
-            android:layout_marginTop="7dp"
+        <ListView
+            android:id="@+id/listViewDays"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="right">
-            <TextView
-                android:id="@+id/LabelSeekBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
-
-        </LinearLayout>
-        <SeekBar
-            android:id="@+id/barAulas"
-            android:max="6"
-            android:progress="1"
-            android:layout_below="@+id/LabelSeek"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="match_parent"></ListView>
 
     </RelativeLayout>
 
