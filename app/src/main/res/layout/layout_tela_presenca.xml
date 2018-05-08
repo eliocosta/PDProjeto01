@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollViewPresenca">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayoutPresenca">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tela_presenca"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+
+        <GridLayout
+            android:rowCount="2"
+            android:columnCount="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:background="#C0D9D9">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teste"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="center"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_gravity="end"/>
+        </GridLayout>
+
+        <GridLayout
+            android:rowCount="1"
+            android:columnCount="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:background="#C0D9D9">
+
+            <TextView
+                android:id="@+id/txtDia-Data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teste"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="center"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_gravity="end"/>
+        </GridLayout>
+
+        <GridLayout
+            android:rowCount="1"
+            android:columnCount="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_btn_salvar"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FFFFFF"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:textAllCaps="false"
+                android:textSize="20sp"/>
+        </GridLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/txt_btn_salvar"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>-->
+    </LinearLayout>
+</ScrollView>
