@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projeto 01</string>
+    <string name="app_name">Aula_1004_widgets</string>
     <string name="txt_tela_presenca">Marque aqui o dia que você foi na aula</string>
     <string name="txt_btn_salvar">Salvar</string>
     <string name="txt_btn_presenca">Informar Presença</string>

@@ -1,5 +1,6 @@
 package com.utfpr.grupo2.projeto01;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnCli
         setDateTimeField();
 
 
-//        // set a change listener on the SeekBar
+        // set a change listener on the SeekBar
 //        SeekBar seekBar = findViewById(R.id.barAulas);
 //        seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
 //
